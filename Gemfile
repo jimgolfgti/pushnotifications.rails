@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 gem 'rails', '3.2.12'
 
@@ -38,3 +39,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'esendex', :git => 'git://github.com/esendex/esendex.gem.git', :branch => 'rails-engine'
+gem 'thin'
