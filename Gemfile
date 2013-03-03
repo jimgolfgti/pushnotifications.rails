@@ -36,3 +36,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'esendex', :git => 'git://github.com/esendex/esendex.gem.git', :branch => 'rails-engine'
