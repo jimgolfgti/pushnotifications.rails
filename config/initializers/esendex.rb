@@ -1,9 +1,9 @@
 Esendex.configure do |config|
 	config.message_delivered_event_handler = lambda { |notification| 
-		log_event("delivered", notification)
+		EventNotificationProcessor.new(:delivered, notification).process
 	}
 	config.message_failed_event_handler = lambda { |notification| 
-		log_event("failed", notification)
+		EventNotificationProcessor.new(:failed, notification).process
 	}
 	config.inbound_message_handler = lambda { |notification| 
 		log_event("inbound", notification)
