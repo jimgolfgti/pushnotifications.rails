@@ -1,5 +1,5 @@
 class EventNotificationProcessor
-	def initialize(type, notification)
+  def initialize(type, notification)
     @type = type
     @notification = notification
   end

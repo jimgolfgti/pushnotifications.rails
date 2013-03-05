@@ -7,6 +7,7 @@ Esendex.configure do |config|
 	}
 	config.inbound_message_handler = lambda { |notification| 
 		log_event("inbound", notification)
+		InboundMessageProcessor.new(notification).process
 	}
 end
 

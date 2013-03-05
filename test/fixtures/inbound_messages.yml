@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  notification_id: MessageOne
+  message_id: One
+  account_id: AccountOne
+  message_text: MessageOneText
+  from: 07712345678
+  to: 07787654321
+
+two:
+  notification_id: MessageTwo
+  message_id: Two
+  account_id: AccountTwo
+  message_text: MessageTwoText
+  from: 07787654321
+  to: 07712345678
