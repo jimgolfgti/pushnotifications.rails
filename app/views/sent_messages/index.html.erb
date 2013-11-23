@@ -1,0 +1,28 @@
+<h1>Sent Messages</h1>
+<% if @count > 0 then %>
+<table>
+	<thead>
+		<tr>
+			<th>Index</th>
+			<th>Reference</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="3">Total Messages Sent: <%= @count %></td>
+		</tr>
+	</tfoot>
+	<tbody>
+<% @messages.each do |message| %>
+		<tr>
+			<td><%= message.id %></td>
+			<td><%= message.message_id %></td>
+			<td><%= message.status %></td>
+		</tr>
+<% end %>
+	</tbody>
+</table>
+<% else %>
+<em>No messages to show</em>
+<% end %>
