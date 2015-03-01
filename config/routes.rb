@@ -1,7 +1,7 @@
 PushnotificationsRails::Application.routes.draw do
-  root to: "sent_messages#index"
-
+  get "received_messages/index"
   get "sent_messages/index"
+  root 'sent_messages#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

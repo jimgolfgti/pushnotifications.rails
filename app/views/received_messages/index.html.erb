@@ -1,0 +1,31 @@
+<h1>Received Messages</h1>
+<% if @count > 0 then %>
+<table class="table table-hover">
+	<thead>
+		<tr>
+		    <th>When</th>
+			<th>From</th>
+			<th>To</th>
+			<th>Message</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="4">Total Messages Received: <%= @count %></td>
+		</tr>
+	</tfoot>
+	<tbody>
+<% @messages.each do |message| %>
+		<tr>
+		    <td title="<%= message.created_at %>"><%= time_ago_in_words(message.created_at) %></td>
+			<td><%= message.from %></td>
+			<td><%= message.to %></td>
+			<td><%= message.message_text %></td>
+		</tr>
+<% end %>
+	</tbody>
+</table>
+<%= paginate @messages, window: 2 %>
+<% else %>
+<em>No messages to show</em>
+<% end %>

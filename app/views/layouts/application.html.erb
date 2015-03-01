@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <div id="main-container" class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <h3>Push Notification Receiver</h3>
+                <ul class="nav nav-pills nav-stacked" role="navigation">
+                    <li role="presentation" class="<%= 'active' if current_page? sent_messages_index_path or current_page? root_path %>"><%= link_to "Sent Messages", sent_messages_index_path %></li>
+                    <li role="presentation" class="<%= 'active' if current_page? received_messages_index_path %>"><%= link_to "Received Messages", received_messages_index_path %></li>
+                </ul>
+            </div>
+            <div class="col-xs-9">
+                <%= yield %>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

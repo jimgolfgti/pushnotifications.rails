@@ -1,11 +1,11 @@
 <h1>Sent Messages</h1>
 <% if @count > 0 then %>
-<table>
+<table class="table table-hover">
 	<thead>
 		<tr>
-			<th>Index</th>
-			<th>Reference</th>
-			<th>Status</th>
+			<th>Message</th>
+			<th>When</th>
+			<th />
 		</tr>
 	</thead>
 	<tfoot>
@@ -16,13 +16,14 @@
 	<tbody>
 <% @messages.each do |message| %>
 		<tr>
-			<td><%= message.id %></td>
-			<td><%= message.message_id %></td>
-			<td><%= message.status %></td>
+			<td><%= message.status %> Message</td>
+			<td title="<%= message.failed_at || message.delivered_at %>"><%= time_ago_in_words message.failed_at || message.delivered_at %> ago</td>
+			<td>Link to details here</td>
 		</tr>
 <% end %>
 	</tbody>
 </table>
+<%= paginate @messages, window: 2 %>
 <% else %>
 <em>No messages to show</em>
 <% end %>
