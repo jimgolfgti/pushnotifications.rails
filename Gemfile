@@ -41,6 +41,10 @@ end
 
 # Use unicorn as the app server
 gem 'unicorn'
+group :production do
+    gem 'rails_12factor'
+    gem 'rails_serve_static_assets'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
